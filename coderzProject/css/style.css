@@ -1,0 +1,340 @@
+/* || COMMON */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.9);
+	/* opacity: 0.7; */
+}
+.hover_opacity {
+	transition: opacity 0.5s;
+}
+.hover_opacity:hover {
+	opacity: 0.8;
+}
+
+.ltr_effect {
+	position: relative;
+}
+
+.ltr_effect::after {
+	position: absolute;
+	content: "";
+	width: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background: #333;
+	z-index: -1;
+	transition: width 0.5s;
+}
+.ltr_effect:hover::after {
+	width: 100%;
+}
+.layer_content_overlay {
+	position: relative;
+	opacity: 0;
+	top: 10px;
+	transition: top 0.5s, opacity 0.5s;
+	transition-delay: 0.2s;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Montserrat", sans-serif;
+}
+
+button {
+	font-family: inherit;
+}
+.cleaner {
+	clear: both;
+}
+.pd_y {
+	padding: 60px 0;
+}
+.pd_y_bigger {
+	padding: 120px 0;
+}
+/* || BODY */
+body {
+	font-family: "Varela Round", "sans-serif";
+}
+.header {
+	/* background-color: grey; */
+	/* removeing color to show header with .home background-color */
+	position: fixed;
+	width: 100%;
+	z-index: 10;
+	background-color: inherit;
+	/* background-color: rgba(0, 0, 0, 0.9); */
+}
+
+.container {
+	width: 90%;
+	margin: auto;
+	/* background-color: red; */
+}
+/*  to solve float problem */
+.header .header_content {
+	overflow: hidden;
+}
+.header .header_logo {
+	width: 30%;
+	padding: auto 10px;
+	float: left;
+}
+.header .header_logo .logo_img {
+	width: 30%;
+	margin-top: 10px;
+}
+.header .header_nav {
+	width: 70%;
+	float: left;
+	list-style: none;
+	padding-top: 10px;
+	text-align: right;
+}
+
+.header .header_nav .nav_item {
+	display: inline-block;
+	text-align: center;
+	margin: 0;
+}
+
+.header .header_nav .nav_item .nav_item_link {
+	display: block;
+	/*  background-color: blueviolet; */
+	color: #fff;
+	text-decoration: none;
+	padding: 15px 8px;
+	/* margin: 2px; */
+	font-size: 15px;
+	text-transform: capitalize;
+}
+.header .header_.nav_item .nav_item_link::after,
+.header .header_.nav_item .nav_item_link.active::after {
+	content: "";
+	display: block;
+	height: 3px;
+	background-color: #6195ff;
+	transition: width 0.5s;
+	margin-top: 2px;
+}
+
+.header .header_nav .nav_item .nav_item_link:hover::after {
+	width: 100%;
+}
+.header .header_nav .nav_item .nav_item_link.active::after {
+	width: 100%;
+}
+.header .header_.nav_item .nav_item_link::after {
+	width: 0;
+}
+/* || HOME SECTION */
+.home {
+	height: 100vh;
+	background-image: url(/coderzProject//images/background/background1.webp);
+	background-size: cover;
+	position: relative;
+}
+.home .overlay .home_content {
+	position: absolute;
+	width: 65%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+.home .home_title {
+	color: #ffff;
+	font-size: 2.5rem;
+	text-transform: uppercase;
+}
+
+.home .home_desc {
+	margin: 10px 0;
+	color: #ffff;
+	letter-spacing: 2px;
+	line-height: 1.5;
+}
+.home .btn {
+	min-width: 150px;
+	padding: 10px 15px;
+	border-radius: 5px;
+	border: 0;
+	cursor: pointer;
+	font-size: 20px;
+}
+
+.home .btn_start {
+	margin-right: 2%;
+	background-color: #fff;
+}
+
+.home .btn_learn {
+	margin-left: 2%;
+	background-color: #6195ff;
+	color: #fff;
+}
+
+/* || HEADER SECTION */
+/* For sub-sections */
+.section_header {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.section_header .section_title {
+	font-size: 35px;
+	text-transform: capitalize;
+	margin-bottom: 10px;
+}
+.section_header .section_line {
+	display: block;
+	margin: 0 auto 70px auto;
+	height: 5px;
+	width: 50px;
+	background-color: #6195ff;
+}
+/* || ABOUT SECTION */
+.about_content {
+	overflow: hidden;
+}
+
+.about_item {
+	width: 30%;
+	float: left;
+	text-align: center;
+	border: 1px solid #e8e8e8;
+	padding: 50px 25px;
+	transition: color 0.5s;
+}
+.about_item:hover .about_item_title {
+	color: #fff;
+}
+.about_item.mg {
+	margin: 0 5%;
+}
+
+.about_item .icon {
+	color: #6195ff;
+	margin-bottom: 10px;
+}
+
+.about_item .about_item_title {
+	text-transform: capitalize;
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+.about_item .about_item_desc {
+	line-height: 1.6;
+	color: #888;
+	padding-bottom: 10px;
+}
+.about_item .about_item_link {
+	color: #6195ff;
+	text-transform: capitalize;
+}
+
+/* || FEATURED WORKS SECTION */
+.portfolio {
+	background: #f9f9f9;
+}
+.portfolio_content {
+	overflow: hidden;
+	width: 100%;
+	text-align: center;
+}
+.portfolio_item {
+	width: 32%;
+	float: left;
+	margin-bottom: 4%;
+	position: relative;
+	padding: 1%;
+}
+.portfolio_item.mg {
+	margin: 0 2%;
+}
+.portfolio_item .portfolio_item_img {
+	width: 100%;
+	border-radius: 2%;
+	border: 1px solid rgb(221, 218, 218);
+}
+.portfolio_item .layer_content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	visibility: hidden;
+	transform: opacity 0.2s;
+	border-radius: 2%;
+}
+
+.portfolio_item:hover .layer_content {
+	opacity: 1;
+	visibility: visible;
+}
+
+.portfolio_item .layer_content .layer_info {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	width: 100%;
+}
+.portfolio_item .layer_content .layer_info .category {
+	color: #6195ff;
+	text-transform: uppercase;
+	display: block;
+	margin: 0.5%;
+	font-size: 110%;
+
+	transition-delay: 0.2s;
+}
+.portfolio_item .layer_content .layer_info .layer_content_title {
+	font-size: 100%;
+	color: #fff;
+	margin-bottom: 4%;
+
+	transition-delay: 0.3s;
+}
+.portfolio_item .layer_content .layer_info .layer_content_link {
+	color: #fff;
+
+	transition-delay: 0.3s;
+}
+
+/*  Hover effect for 
+.layer_info .layer_content_link 
+.layer_info .layer_content_title 
+.layer_info .category
+*/
+.portfolio_item:hover .layer_content_link.layer_content_overlay,
+.portfolio_item:hover .layer_content_title.layer_content_overlay,
+.portfolio_item:hover .category.layer_content_overlay {
+	top: 0;
+	opacity: 1;
+}
+.portfolio_item .layer_content .layer_info .layer_content_link i {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: #6195ff;
+	line-height: 40px;
+	border-radius: 10%;
+}
